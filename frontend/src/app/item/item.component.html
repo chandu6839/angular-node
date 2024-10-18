@@ -1,0 +1,15 @@
+<div>
+    <h1>CRUD App</h1>
+    <form (submit)="addItem()">
+        <input type="text" name="Name"  [(ngModel)]="newItem.name" placeholder="Name" required />
+        <input type="text" name="Description"  [(ngModel)]="newItem.description" placeholder="Description" required />
+        <button type="submit">Add Item</button>
+    </form>
+
+    <ul>
+        <li *ngFor="let item of items">
+            {{ item.name }} - {{ item.description }}
+            <button (click)="deleteItem(item._id)">Delete</button>
+        </li>
+    </ul>
+</div>
